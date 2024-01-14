@@ -1,17 +1,10 @@
-import turtle as tur
-import colorsys as cs
-tur.setup(800,800)
-tur.speed(200)
-tur.width(1)
-tur.bgcolor("black")
-for j in range(25):
-    for i in range(15):
-        tur.color(cs.hsv_to_rgb(i/15,j/25,1))
-        tur.right(90)
-        tur.circle(200-j*4,90)
-        tur.left(90)
-        tur.circle(200-j*4,90)
-        tur.right(180)
-        tur.circle(50,24)
-tur.hideturtle()
-tur.done()
+# Импортируем библиотеку
+
+from googletrans import Translator # Создаем переводчик
+translator = Translator()  # Задаем исходные язык и целевой язык
+text = input('Enter text to translate it: ')  # Переводим текст
+src = 'auto'
+dest = input('Entre a short language name. e.g. en - english, es-spanish: ') # Задаем исходный текст
+
+translated_text = translator.translate(text, src=src, dest=dest).text  # Выводим переведенное предложение
+print(translated_text)
